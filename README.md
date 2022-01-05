@@ -3,6 +3,6 @@
 인프런: JPA활용1 ( 김영한 강의 )
 
 #구성
-Spring Boot, jdk 11
-thymleaf
-jpa, jpql
+- Spring Boot, jdk 11
+- thymleaf
+- jpa, jpql
