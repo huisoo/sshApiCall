@@ -15,10 +15,10 @@ import java.io.InputStream;
 @RequiredArgsConstructor
 @Slf4j
 public class SSHUtils {
-    private final String username = "";
-    private final String host = "";
-    private final int port = 0;
-    private final String password = "";
+    private final String username = "username";
+    private final String host = "host";
+    private final int port = 22;
+    private final String password = "password";
 
     private Session session;
     private ChannelExec channelExec;

@@ -5,8 +5,10 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import ssh_call.call.utils.SSHUtils;
+import ssh_call.call.utils.ShRunner;
 
 import java.util.List;
+import java.util.Map;
 
 @Service
 @Slf4j
@@ -52,10 +54,17 @@ public class CmdsService {
 //        return "";
 //    }
 
-    public String executeCmdByStringCommand(String cmd){
+    public Map executeCmdByStringCommand(String cmd){
         log.info("command : " + cmd);
-        SSHUtils sshUtils = new SSHUtils();
-        return sshUtils.getSSHResponse(cmd);
+        //SSHUtils sshUtils = new SSHUtils();
+
+        ShRunner shRunner = new ShRunner();
+        //String cmds = "source /app/was/hello.sh";
+        String[] callCmd = {"/bin/sh", "-c", cmd};
+        Map map = shRunner.execCommand(callCmd);
+        log.info("ssh call~~");
+
+        return map;
     }
 
 }
